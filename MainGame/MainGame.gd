@@ -12,24 +12,26 @@ func _ready():
 	while currentTimer > 0:
 		yield(get_tree().create_timer(1.0), "timeout")
 		$HUD/Countdown.text = str(currentTimer)
-		$HUD/CurrentScore.text = str(GlobalVariables.scoringInformation["currentScore"])
 		currentTimer = currentTimer - 1
 		print(currentTimer)
 	print("Game Over")
 	# if currentscore > highscore, then update highscore ?
+	# Store the score in an array.
+	# go to the endscene.
 	
-	GlobalVariables.previousScores.push_front( GlobalVariables.scoringInformation["currentScore"])
+	GlobalVariables.previousScores.push_front(GlobalVariables.scoringInformation["currentScore"])
 	print(GlobalVariables.previousScores)
 	get_tree().change_scene("res://EndScene.tscn")
-	# slight bug, when restarting game (make a button for it btw) is that the code doesnt go down afterwards woops.
-	# another slight bug, the end of game shows ALL high scores, instead of just one to start with.
+	# if size array > 5 delete the last index
+	# if currentScore > highscore then highScore = currentScore
 
 # warning-ignore:unused_argument
 func _process(delta):
-	pass
-	
+	$HUD/CurrentScore.text = str(GlobalVariables.scoringInformation["currentScore"])
+# Process runs every frame refresh, which could be 30 fps for some computers. (21/03/22)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
+# func _process(delta):
 #	pass
 
 

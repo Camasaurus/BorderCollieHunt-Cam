@@ -3,7 +3,7 @@ extends Node
 var bulletInstanceCount = 0 # Keeps track of how many bullet instances are current
 var enemyBulletInstanceCount = 0
 
-var previousScores = [200, 150, 140, 50, 20]
+var previousScores = []
 
 var scoringInformation = {
 	"currentScore": 0,

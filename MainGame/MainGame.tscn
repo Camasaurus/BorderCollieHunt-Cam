@@ -11,16 +11,16 @@ extents = Vector2( 23.2264, 390.702 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 662.058, 10 )
 
-[node name="SpaceInvaders" type="Control"]
-margin_left = -0.768188
-margin_top = 1.23187
-margin_right = 1279.23
-margin_bottom = 721.232
+[node name="BorderCollieHunt" type="Control"]
+margin_left = 0.904297
+margin_top = 2.06811
+margin_right = 1280.9
+margin_bottom = 722.068
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-countdownMax = 20
+countdownMax = 25
 
 [node name="HUD" type="HBoxContainer" parent="."]
 margin_left = 57.0
